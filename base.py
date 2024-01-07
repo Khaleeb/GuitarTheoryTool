@@ -223,7 +223,7 @@ class Key:
 def main():
     for i in NoteArr:
         print(i, ':', SharpsArr[i])
-    print("Input a key numer:")
+    print("Input a key number:")
     k = input()
     print("Input Major/Minor (M/m):")
     km = input()
