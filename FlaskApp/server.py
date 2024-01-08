@@ -8,8 +8,11 @@ app.secret_key = "1337"
 
 @app.route('/display/')
 def display():
-    return "%i %s" % (session['keyID'], session['scaleShape'])
+    return render_template('display.html', scaleNoteOutput="<p>testing</p>")
 
+#@app.route('/display/', methods=['POST'])
+#def displayRet():
+   #return redirect(url_for('welcome'))
 
 
 @app.route('/')
