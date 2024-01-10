@@ -1,10 +1,5 @@
-<html>
-<header>
-    <title>Guitar Theory Tool</title>
-</header>
-
-<body>
-    <h1>Welcome to the Guitar Theory Tool</h1>
+{% extends 'base.html' %}
+{% block content %}
     <p>Please select these options and press continue</p>
     <h4>Select Key: </h4>
 
@@ -78,7 +73,4 @@
         <br><br>
         <input type="submit" value="Continue">
     </form>
-
-</body>
-
-</html>
+{% endblock %}
