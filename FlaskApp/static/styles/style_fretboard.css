@@ -1,3 +1,40 @@
+.top {
+	background-color: teal;
+	margin: auto;
+	text-align: center;
+	width: 50%;
+	box-shadow: 10px 10px 8px #888888;
+}
+
 .fretboard {
 	font-size: 20
+}
+
+.boxed {
+	display: inline-block;
+	box-shadow: 10px 10px 8px #888888;
+}
+
+span.scale {
+	background-color: #FFA07A;
+	color: black
+}
+
+span.first {
+	background-color: #CD5C5C;
+	color: black
+}
+
+span.third {
+	background-color: #9FE2BF;
+	color: black
+}
+
+span.fifth {
+	background-color: #CCCCFF;
+	color: black
+}
+
+html {
+	background-color: lightgrey;
 }

@@ -63,7 +63,7 @@ class Key:
         self.root =root
         self.key = k
 
-        # Mjor/Relate Major
+        # Major/Relate Major
         if(self.key == 'M'):
                 self.keyname = SharpsArr[self.root] + " Major"
                 self.majorScale = [None] * 7
@@ -102,23 +102,12 @@ class Key:
                 t.append(self.minorScale[(i+2) % 7])
                 t.append(self.minorScale[(i+4)% 7])
                 self.triads[i] = t
-    
-
-    # return specified triad array for key object, takes triad from triads[]
-    def TriadConvert(self, t):
-        return [SharpsArr[t[0]], SharpsArr[t[1]], SharpsArr[t[2]]]
-
-    
-    # return specified triad string for key object, specified by arr from TriadConvert
-    def TriadString(self, t):
-        s = ""
-        for i in t:
-            s += i +" "
-        return s
 
 
     # return HTML snippet for specified target chord in Key object
     def boardBuilder(self, chord):
+        flag = len(chord) > 2        # trigger flag if chord is given
+        print("debug:", chord)
         if(self.key == 'M'):
             currScale = self.majorScale
         if(self.key == 'm'):
@@ -132,45 +121,69 @@ class Key:
 
         for i in range(0,22):
             if(eString[i] in currScale):
-                if(eString[i] in chord):
-                    eOut[i] = '<' + str(currScale.index(eString[i])+1) + '>'
+                if(flag and eString[i] == chord[0]):
+                    eOut[i] = '<span class="first">-' + str(currScale.index(eString[i])+1) + '-</span>'
+                elif(flag and eString[i] == chord[1]):
+                    eOut[i] = '<span class="third">-' + str(currScale.index(eString[i])+1) + '-</span>'
+                elif(flag and eString[i] == chord[2]):
+                    eOut[i] = '<span class="fifth">-' + str(currScale.index(eString[i])+1) + '-</span>'
                 else:
-                    eOut[i] = '-' + str(currScale.index(eString[i])+1) + '-'
+                    eOut[i] = '<span class="scale">-' + str(currScale.index(eString[i])+1) + '-</span>'
             else:
                 eOut[i] = '---'
             if(BString[i] in currScale):
-                if(BString[i] in chord):
-                    BOut[i] = '<' + str(currScale.index(BString[i])+1) + '>'
+                if(flag and BString[i] == chord[0]):
+                    BOut[i] = '<span class="first">-' + str(currScale.index(BString[i])+1) + '-</span>'
+                elif(flag and BString[i] == chord[1]):
+                    BOut[i] = '<span class="third">-' + str(currScale.index(BString[i])+1) + '-</span>'
+                elif(flag and BString[i] == chord[2]):
+                    BOut[i] = '<span class="fifth">-' + str(currScale.index(BString[i])+1) + '-</span>'
                 else:
-                    BOut[i] = '-' + str(currScale.index(BString[i])+1) + '-'
+                    BOut[i] = '<span class="scale">-' + str(currScale.index(BString[i])+1) + '-</span>'
             else:
                 BOut[i] = '---'
             if(GString[i] in currScale):
-                if(GString[i] in chord):
-                    GOut[i] = '<' + str(currScale.index(GString[i])+1) + '>'
+                if(flag and GString[i] == chord[0]):
+                    GOut[i] = '<span class="first">-' + str(currScale.index(GString[i])+1) + '-</span>'
+                elif(flag and GString[i] == chord[1]):
+                    GOut[i] = '<span class="third">-' + str(currScale.index(GString[i])+1) + '-</span>'
+                elif(flag and GString[i] == chord[2]):
+                    GOut[i] = '<span class="fifth">-' + str(currScale.index(GString[i])+1) + '-</span>'
                 else:
-                    GOut[i] = '-' +  str(currScale.index(GString[i])+1) + '-'
+                    GOut[i] = '<span class="scale">-' +  str(currScale.index(GString[i])+1) + '-</span>'
             else:
                 GOut[i] = '---'
             if(DString[i] in currScale):
-                if(DString[i] in chord):
-                    DOut[i] = '<' + str(currScale.index(DString[i])+1) + '>'
+                if(flag and DString[i] == chord[0]):
+                    DOut[i] = '<span class="first">-' + str(currScale.index(DString[i])+1) + '-</span>'
+                elif(flag and DString[i] == chord[1]):
+                    DOut[i] = '<span class="third">-' + str(currScale.index(DString[i])+1) + '-</span>'
+                elif(flag and DString[i] == chord[2]):
+                    DOut[i] = '<span class="fifth">-' + str(currScale.index(DString[i])+1) + '-</span>'
                 else:
-                    DOut[i] =  '-' + str(currScale.index(DString[i])+1) + '-'
+                    DOut[i] =  '<span class="scale">-' + str(currScale.index(DString[i])+1) + '-</span>'
             else:
                 DOut[i] = '---'
             if(AString[i] in currScale):
-                if(AString[i] in chord):
-                    AOut[i] = '<' + str(currScale.index(AString[i])+1) + '>'
+                if(flag and AString[i] == chord[0]):
+                    AOut[i] = '<span class="first">-' + str(currScale.index(AString[i])+1) + '-</span>'
+                elif(flag and AString[i] == chord[1]):
+                    AOut[i] = '<span class="third">-' + str(currScale.index(AString[i])+1) + '-</span>'
+                elif(flag and AString[i] == chord[2]):
+                    AOut[i] = '<span class="fifth">-' + str(currScale.index(AString[i])+1) + '-</span>'
                 else:
-                    AOut[i] =  '-' + str(currScale.index(AString[i])+1) + '-'
+                    AOut[i] =  '<span class="scale">-' + str(currScale.index(AString[i])+1) + '-</span>'
             else:
                 AOut[i] = '---'
             if(EString[i] in currScale):
-                if(EString[i] in chord):
-                    EOut[i] = '<' + str(currScale.index(EString[i])+1) + '>'
+                if(flag and EString[i] == chord[0]):
+                    EOut[i] = '<span class="first">-' + str(currScale.index(EString[i])+1) + '-</span>'
+                elif(flag and EString[i] == chord[1]):
+                    EOut[i] = '<span class="third">-' + str(currScale.index(EString[i])+1) + '-</span>'
+                elif(flag and EString[i] == chord[2]):
+                    EOut[i] = '<span class="fifth">-' + str(currScale.index(EString[i])+1) + '-</span>'
                 else:
-                    EOut[i] =  '-' + str(currScale.index(EString[i])+1) + '-'
+                    EOut[i] =  '<span class="scale">-' + str(currScale.index(EString[i])+1) + '-</span>'
             else:
                 EOut[i] = '---'
         first = "|-" + eOut[0] + "--||"
@@ -202,9 +215,36 @@ class Key:
 def renderScales(keyID, scaleShape, trgtChords):
     snippet = "<h4>Scale notes:</h4>"
     currKey = Key(keyID, scaleShape)
-    snippet += currKey.boardBuilder([None])
+    snippet += '<div class="boxed">'
+    snippet += currKey.boardBuilder([None]) + '</div><br>'
+    for chord in trgtChords:
+        #snippet += '<div class="boxed">'
+        chordNum = int(chord) - 1
+        snippet += "<h4>"
+        if(currKey.key == 'M'):
+            snippet += currKey.keyname + " Scale, focus on " + majorDegrees[chordNum]
+        if(currKey.key == 'm'):
+            snippet += currKey.keyname +  " Scale, focus on " + minorDegrees[chordNum]
+        snippet += ': <span class="first">&ensp;1&ensp;</span><span class="third">&ensp;3&ensp;</span><span class="fifth">&ensp;5&ensp;</span></h4>'+ '<div class="boxed">' + currKey.boardBuilder(currKey.triads[chordNum]) + '</div><br>'
     return snippet
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+        
+    
+"""
+    # return specified triad array for key object, takes triad from triads[]
+    def TriadConvert(self, t):
+        return [SharpsArr[t[0]], SharpsArr[t[1]], SharpsArr[t[2]]]
+
+    
+    # return specified triad string for key object, specified by arr from TriadConvert
+    def TriadString(self, t):
+        s = ""
+        for i in t:
+            s += i +" "
+        return s
+"""

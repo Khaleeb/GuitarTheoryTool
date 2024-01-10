@@ -236,6 +236,7 @@ def main():
         if chord == 'exit':
             break
         chordNum = int(chord) - 1
+        #print("debug:", currKey.triads[chordNum])
         if(currKey.key == 'M'):
             print(currKey.keyname, "Scale, focus on ", majorDegrees[chordNum])
         if(currKey.key == 'm'):
