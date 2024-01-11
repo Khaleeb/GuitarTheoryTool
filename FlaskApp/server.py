@@ -6,6 +6,7 @@ from flask import Flask, redirect, url_for, request, render_template, session
 # Flask stuff
 app = Flask(__name__, template_folder="templates", static_folder="static")
 app.secret_key = "1337"
+PORTNO = 8080           ## Defines portnumber
 
 # music theory stuff
 NoteArr =   [0   ,  1  ,  2  ,  3  ,  4  ,  5  ,  6  ,  7  ,  8  ,  9  ,  10 , 11]
@@ -230,7 +231,7 @@ def renderScales(keyID, scaleShape, trgtChords):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=PORTNO)
 
 
         
