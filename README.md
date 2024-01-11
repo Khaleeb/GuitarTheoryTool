@@ -3,15 +3,19 @@
 Web Application built on Flask library in Python.
 
 Tool to aid guitarist in practicing target notes in solos. Specify a scale and underlying chords to see all musically proper notes available and target notes for underlying chords.
-### Example: 
-![](https://github.com/Khaleeb/GuitarTheoryTool/Screenshots/Form.png)
-![](https://github.com/Khaleeb/GuitarTheoryTool/Screenshots/Output.png)
 
-### Instructions:
+## Example
+
+![Form](https://github.com/Khaleeb/GuitarTheoryTool/Screenshots/Form.png)
+![Results](https://github.com/Khaleeb/GuitarTheoryTool/Screenshots/Output.png)
+
+## Instructions
+
 **To host app on local port:**
+
 1. Requires Python, pip, and virtualenv
 2. From FlaskApp directory:
-    * Windows: 
+    * Windows:
         * `virtualenv --python <C:\path\to\python.exe> venv`
         * `.\venv\Scripts\activate`
         * `pip install -r requirements.txt`
@@ -27,9 +31,6 @@ Tool to aid guitarist in practicing target notes in solos. Specify a scale and u
 **Alernatively, console version can be run from root directory:**
 `python base.py`
 
+### Future Ideas
 
-
-
-
-**Future Ideas**
-- *5,6,7,8 note scales; user programmable* 
+* *5,6,7,8 note scales; user programmable*
