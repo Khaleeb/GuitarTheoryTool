@@ -6,8 +6,8 @@ Tool to aid guitarist in practicing target notes in solos. Specify a scale and u
 
 ## Example
 
-![Form](https://github.com/Khaleeb/GuitarTheoryTool/Screenshots/Form.png)
-![Results](https://github.com/Khaleeb/GuitarTheoryTool/Screenshots/Output.png)
+![Form](https://github.com/Khaleeb/GuitarTheoryTool/blob/master/Screenshots/Form.png)
+![Results](https://github.com/Khaleeb/GuitarTheoryTool/blob/master/Screenshots/Output.png)
 
 ## Instructions
 
